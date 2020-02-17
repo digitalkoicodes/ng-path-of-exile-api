@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { League } from '../models/league';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,9 +12,8 @@ export class LeagueService {
 		public http: HttpClient
 	) { }
 
-	filter(params?){
-		console.log('running league service');
-		return this.http.get("http://api.pathofexile.com/leagues", {params: params});
+	filter(params?): Observable<League[]>{
+		return this.http.get<League[]>("http://api.pathofexile.com/leagues", {params: params});
 	}
 
 }
