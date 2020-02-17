@@ -12,7 +12,7 @@ export class LeaguesComponent implements OnInit {
   public leagues: League[] = [];
 
   constructor(
-    private route: ActivatedRoute
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {

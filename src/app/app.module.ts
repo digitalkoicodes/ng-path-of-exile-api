@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeaguesComponent } from './leagues/leagues.component';
@@ -98,6 +97,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     PortalModule,
     ScrollingModule,
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     LeagueService,
     LeaguesResolve
